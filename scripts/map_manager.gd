@@ -2,6 +2,7 @@ extends Node2D
 
 @export var map_chunk: PackedScene
 @export var player: Area2D
+@export var camera: Camera2D
 
 @export var initial_chunks: int
 @export var spawn_distance_threshold: float
@@ -11,15 +12,12 @@ var spawn_position: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	spawn_next_chunk()
-	var player_camera: Camera2D = player.get_node("Camera")
-	if not player_camera:
-		print("Não foi encontrado um nó chamado Camera\n")
 		
 	var first_chunk = active_chunks[0]
 	var chunk_sprite = first_chunk.get_node("Sprite2D")
-	player_camera.setup_zoom_from_sprite(chunk_sprite)
+	camera.setup_zoom_from_sprite(chunk_sprite)
 	
-	player.global_position = first_chunk.global_position + Vector2(550, 100)
+	player.global_position = first_chunk.global_position + Vector2(650, 100)
 	
 	for i in range(initial_chunks - 1):
 		spawn_next_chunk()
