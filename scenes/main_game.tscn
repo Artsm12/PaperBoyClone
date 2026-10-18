@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cog6vpotryfw7"]
+
+[ext_resource type="PackedScene" uid="uid://dt1n3spjti7l3" path="res://scenes/player.tscn" id="1_s3esy"]
+[ext_resource type="PackedScene" uid="uid://vsn24mrixnih" path="res://scenes/map_manager.tscn" id="4_0rdsr"]
+[ext_resource type="PackedScene" uid="uid://w6r7vtspl4ua" path="res://scenes/map_chunk.tscn" id="4_ipu61"]
+
+[node name="MainGame" type="Node" unique_id=115174517]
+
+[node name="Player" parent="." unique_id=569292494 instance=ExtResource("1_s3esy")]
+z_index = 1
+position = Vector2(568, 411)
+scale = Vector2(0.5, 0.5)
+
+[node name="MapManager" parent="." unique_id=493967089 node_paths=PackedStringArray("player") instance=ExtResource("4_0rdsr")]
+map_chunk = ExtResource("4_ipu61")
+player = NodePath("../Player")
+initial_chunks = 4
+spawn_distance_threshold = 1000.0
