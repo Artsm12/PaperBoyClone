@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfgawjyd81lee" path="res://scenes/camera.tscn" id="3_d2op2"]
 [ext_resource type="PackedScene" uid="uid://vsn24mrixnih" path="res://scenes/map_manager.tscn" id="4_0rdsr"]
 [ext_resource type="PackedScene" uid="uid://w6r7vtspl4ua" path="res://scenes/map_chunk.tscn" id="4_ipu61"]
+[ext_resource type="Script" uid="uid://dpub0myjer3bd" path="res://scripts/hud.gd" id="5_ipu61"]
 
 [node name="MainGame" type="Node" unique_id=115174517]
 
@@ -21,3 +22,6 @@ spawn_distance_threshold = 1000.0
 
 [node name="Camera" parent="." unique_id=1518842838 node_paths=PackedStringArray("player") instance=ExtResource("3_d2op2")]
 player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2122228226]
+script = ExtResource("5_ipu61")

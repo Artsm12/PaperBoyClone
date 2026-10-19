@@ -1,10 +1,14 @@
-[gd_scene format=3 uid="uid://dhcrfwpg3vx4a"]
+[gd_scene format=3 uid="uid://bq3f32yo4dfmq"]
 
-[ext_resource type="Script" uid="uid://cq3ulo1catv8c" path="res://traffic_car.gd" id="1_e3fcb"]
-[ext_resource type="Texture2D" uid="uid://vgv22i53fdr5" path="res://sprites/bicycle.png" id="2_mmgyx"]
+[ext_resource type="Script" uid="uid://cjlxr2uhds6vw" path="res://scripts/traffic_car.gd" id="1_mmgyx"]
+[ext_resource type="Texture2D" uid="uid://c0nff8bqnaxfr" path="res://sprites/spr_sportscar_0.png" id="2_mmgyx"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=745114507]
-script = ExtResource("1_e3fcb")
+[node name="TrafficCar" type="Area2D" unique_id=745114507]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_mmgyx")
+force_horizontal = false
+speed = 50.0
+speed_variation = 0.392
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=745546502]
 texture = ExtResource("2_mmgyx")

@@ -1,0 +1,27 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_house"]
+
+[node name="House" type="Node2D"]
+script = ExtResource("1_house")
+
+[node name="Placeholder" type="Node2D" parent="."]
+
+[node name="Body" type="Polygon2D" parent="Placeholder"]
+color = Color(0.93, 0.85, 0.7, 1)
+polygon = PackedVector2Array(-40, -20, 40, -20, 40, 30, -40, 30)
+
+[node name="Roof" type="Polygon2D" parent="Placeholder"]
+color = Color(0.7, 0.25, 0.2, 1)
+polygon = PackedVector2Array(-50, -20, 50, -20, 0, -62)
+
+[node name="Door" type="Polygon2D" parent="Placeholder"]
+color = Color(0.45, 0.3, 0.2, 1)
+polygon = PackedVector2Array(-8, 6, 8, 6, 8, 30, -8, 30)
+
+[node name="Window" type="Polygon2D" parent="Placeholder"]
+color = Color(0.6, 0.8, 0.95, 1)
+polygon = PackedVector2Array(18, -10, 32, -10, 32, 4, 18, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false

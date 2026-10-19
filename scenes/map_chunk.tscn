@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://w6r7vtspl4ua"]
 
 [ext_resource type="Texture2D" uid="uid://daadr1q1flrrm" path="res://sprites/map.png" id="1_prcgp"]
+[ext_resource type="PackedScene" uid="uid://bq3f32yo4dfmq" path="res://scenes/TrafficCar.tscn" id="2_hkl5p"]
+[ext_resource type="PackedScene" uid="uid://dx8ys4aflj0sc" path="res://scenes/mailBox.tscn" id="3_mbox"]
+[ext_resource type="PackedScene" path="res://scenes/House.tscn" id="4_house"]
 
 [node name="MapChunk" type="Node2D" unique_id=1240529103]
 
@@ -8,5 +11,20 @@
 texture = ExtResource("1_prcgp")
 centered = false
 
+[node name="House1" parent="." instance=ExtResource("4_house")]
+position = Vector2(166, 235)
+
+[node name="House3" parent="." instance=ExtResource("4_house")]
+position = Vector2(352, 50)
+
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=2128073360]
 position = Vector2(254, -242)
+
+[node name="TrafficCar" parent="." unique_id=745114507 instance=ExtResource("2_hkl5p")]
+position = Vector2(597, 232)
+
+[node name="MailBox1" parent="." unique_id=1293996724 instance=ExtResource("3_mbox")]
+position = Vector2(256, 295)
+
+[node name="MailBox3" parent="." unique_id=734979295 instance=ExtResource("3_mbox")]
+position = Vector2(442, 110)

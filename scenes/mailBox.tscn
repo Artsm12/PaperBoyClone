@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://1exd28ew00dn"]
+[gd_scene format=3 uid="uid://dx8ys4aflj0sc"]
 
 [ext_resource type="Script" uid="uid://buwmg8qju7o86" path="res://scripts/mail_box.gd" id="1_rmaot"]
-[ext_resource type="Texture2D" uid="uid://bdwugbphvt73m" path="res://sprites/mailbox_new_C.png" id="2_t0b6i"]
+[ext_resource type="Texture2D" uid="uid://bb4cpgpc15pxc" path="res://sprites/MailboxPack_Patch/MailboxPack_Patch/64x64/Mailboxflagup3_lrg.png" id="2_t0b6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mailbox"]
+size = Vector2(48, 48)
 
 [node name="mailBox" type="Area2D" unique_id=809550948]
 script = ExtResource("1_rmaot")
@@ -10,3 +13,4 @@ script = ExtResource("1_rmaot")
 texture = ExtResource("2_t0b6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1593919772]
+shape = SubResource("RectangleShape2D_mailbox")
