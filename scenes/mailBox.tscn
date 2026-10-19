@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://1exd28ew00dn"]
+
+[ext_resource type="Script" uid="uid://buwmg8qju7o86" path="res://scripts/mail_box.gd" id="1_rmaot"]
+[ext_resource type="Texture2D" uid="uid://bdwugbphvt73m" path="res://sprites/mailbox_new_C.png" id="2_t0b6i"]
+
+[node name="mailBox" type="Area2D" unique_id=809550948]
+script = ExtResource("1_rmaot")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1109435714]
+texture = ExtResource("2_t0b6i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1593919772]

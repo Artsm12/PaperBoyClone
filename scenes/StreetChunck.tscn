@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bgo1dm3fcft57"]
+
+[ext_resource type="Script" uid="uid://dvouqfviyul22" path="res://scripts/street_chunck.gd" id="1_dxxqx"]
+
+[node name="StreetChunck" type="Node2D" unique_id=1333954411]
+script = ExtResource("1_dxxqx")

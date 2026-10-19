@@ -45,4 +45,15 @@ func spawn_next_chunk() -> void:
 func remove_old_chunk() -> void:
 	if active_chunks.size() > initial_chunks + 1:
 		var old_chunk = active_chunks.pop_front()
+		
+		# Contar assinantes que ficaram sem jornal
+		var missed_count: int = 0
+		for child in old_chunk.get_children():
+			if child is Area2D and child.is_in_group("targets"):
+				if child.get("is_subscriber") and not child.get("delivered"):
+					missed_count += 1
+		
+		if missed_count > 0:
+			GameManager.register_missed_deliveries(missed_count)
+			
 		old_chunk.queue_free()

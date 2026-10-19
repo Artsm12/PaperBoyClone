@@ -9,6 +9,7 @@ extends Area2D
 @export var acceleration: float
 @export var lateral_speed: float
 @export var forward_direction: Vector2
+@export var newspaper_scene: PackedScene
 
 @export var base_rotation: int
 
@@ -56,3 +57,31 @@ func handle_movement(delta: float) -> void:
 	var velocity_lateral = lateral_direction * (lateral_input * lateral_speed)
 	var velocity = velocity_forward + velocity_lateral
 	position += velocity * delta
+	
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("obstacles"):
+		GameEvents.player_crashed.emit()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("obstacles"):
+		GameEvents.player_crashed.emit()
+		
+	
+	if Input.is_action_just_pressed("throw_journal"):
+		throw_newspaper()
+
+func throw_newspaper() -> void:
+	if not newspaper_scene:
+		return
+		
+	var paper = newspaper_scene.instantiate()
+	# Posição de origem do lançamento a partir do jogador
+	paper.global_position = global_position
+	
+	# Calcular direção do arremesso (por exemplo, perpendicular ao avanço)
+	var throw_velocity = lateral_direction * 300.0 + (forward_direction * current_forward_speed)
+	
+	if paper.has_method("setup"):
+		paper.setup(throw_velocity)
+		
+	get_parent().add_child(paper)
